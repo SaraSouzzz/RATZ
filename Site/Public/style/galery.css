@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+li {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+  height: 85px;
+  width: 100%;
+  background-color: black;
+}
+.titlemenu{
+  color: white;
+  display: flex;
+  
+}
+/* COMEÇO DA NAVBAR */
+.navMenu {
+    margin-left: 70%;
+}
+
+.navMenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    justify-content: space-around;
+    /* Isso mantem o menu deitado para a animação funcionar. */
+    display: inline-block;
+    /* Aqui separa as letras para a animação da bolinha abaixo do menu funcionar. */
+    width: 80px;
+    /* Tempo da animação de mudança de cor funcionar. */
+    transition: all 0.2s ease-in-out;
+}
+
+.navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Animação da bolinhas com os filhos (itens do menu) */
+.navMenu a:nth-child(1):hover~.dot {
+    -webkit-transform: translateX(30px);
+    opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover~.dot {
+    -webkit-transform: translateX(110px);
+    opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover~.dot {
+    -webkit-transform: translateX(200px);
+    opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover~.dot {
+    -webkit-transform: translateX(285px);
+    opacity: 1;
+}
+
+/* FIM DA NAVBAR */
+
+.footer {
+  background: #000;
+  padding: 30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+
+.wrapper {
+	width: 40%;
+	margin: 40px auto;
+}
+
+.gallery {
+	margin-top: 30px;
+}
+
+.gallery .carrossel {
+	list-style-type: none;
+	margin-left: 35px;
+}
+
+/* animation */
+.gallery .carrossel .photocarro, .gallery .photocarro img {
+	-webkit-transition: all 0.1s ease-in-out;
+  	-moz-transition: all 0.1s ease-in-out;
+  	-o-transition: all 0.1s ease-in-out;
+  	transition: all 0.1s ease-in-out;
+}
+
+.gallery .carrossel .photocarro{
+	position: relative;
+	float: left;
+	width: 130px;
+	height: 130px;
+	margin: 5px;
+	padding: 5px;
+	z-index: 0;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+.gallery .carrossel .photocarro:hover {
+	z-index: 5;
+}
+
+/* Image is position nicely under li */
+.gallery .carrossel .photocarro img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	width: 130px;
+	height: 130px;
+	background: #f0f0f0;
+}
+
+.gallery .carrossel .photocarro img:hover {
+	width: 200px;
+	height: 200px;
+	margin-top: -130px;
+	margin-left: -130px;
+	top: 65%;
+	left: 65%;
+}

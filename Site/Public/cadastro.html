@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style/cad.css">
+</head>
+
+<body>
+  <!-- NAVBAR  -->
+  <h1 class="titlemenu">R A T Z </h1>
+  <nav>
+    <ul>
+      <nav class="navMenu">
+        <a href="index.html">Home</a>
+        <a href="#">Ratz</a>
+        <a href="login.html">log in</a>
+        <a href="cadastro.html">Sign up</a>
+        <div class="dot"></div>
+      </nav>
+    </ul>
+  </nav>
+  <!-- FIM DA NAVBAR -->
+
+  <!-- COMEÇO DO CADASTRO -->
+  <div class="container">
+    <div class="form">
+
+      <h1 class="bemvindo">Seja bem vindo!</h1>
+      <input type="text" placeholder="Nome" id="ipt_nome">
+
+      <input type="text" placeholder="Sobrenome" id="ipt_sobrenome">
+
+      <input type="text" placeholder="Email" id="ipt_email">
+
+      <input type="password" placeholder="******" id="ipt_senha">
+
+      <input type="password" placeholder="******" id="ipt_confirm_senha">
+      <button onclick="cadastrar()">Cadastrar</button>
+
+      <p>Já tem conta? <a href="login.html">Login</a></p>
+    </div>
+    <div class="foto"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Log in</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        RATZ Copyright © 2022 Sptech - All rights reserved
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+<script>
+  function cadastrar() {
+    var nome = ipt_nome.value
+    var sobrenome = ipt_sobrenome.value
+    var email = ipt_email.value
+    var senha = ipt_senha.value
+    var confirmSenha = ipt_confirm_senha.value
+
+    if (nome == "" || sobrenome == "" || email == "" || cpf == "" || cel == "" || senha == "" || confirmSenha == "") {
+
+      alert(`Por favor inserir dados nos campos abaixo.`)
+
+    } else if (senha != confirmSenha) {
+
+      alert(`As senhas inseridas não coincidem.`)
+
+    } else if (Number.isNaN(cpf) || Number.isNaN(cel)) {
+
+      alert(`Por favor verifique se os números nos campos cpf e celular são válidos`)
+
+    } else if (nome == Number || sobrenome == Number) {
+
+      alert(`Por favor insira um nome válido.`)
+
+
+    } else {
+
+      alert(`Cadastro feito com sucesso!`)
+    }
+
+  }
