@@ -1,101 +1,151 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro</title>
-  <link rel="stylesheet" href="style/cad.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RATZ | Cadastro</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="stylesheet" href="./style/cad.css">
+    <link rel="stylesheet" href="style/navfooter.css">
+
 </head>
 
 <body>
-  <!-- NAVBAR  -->
-  <h1 class="titlemenu">R A T Z </h1>
-  <nav>
-    <ul>
-      <nav class="navMenu">
-        <a href="index.html">Home</a>
-        <a href="#">Ratz</a>
-        <a href="login.html">log in</a>
-        <a href="cadastro.html">Sign up</a>
-        <div class="dot"></div>
-      </nav>
-    </ul>
-  </nav>
-  <!-- FIM DA NAVBAR -->
-
-  <!-- COMEÇO DO CADASTRO -->
-  <div class="container">
-    <div class="form">
-
-      <h1 class="bemvindo">Seja bem vindo!</h1>
-      <input type="text" placeholder="Nome" id="ipt_nome">
-
-      <input type="text" placeholder="Sobrenome" id="ipt_sobrenome">
-
-      <input type="text" placeholder="Email" id="ipt_email">
-
-      <input type="password" placeholder="******" id="ipt_senha">
-
-      <input type="password" placeholder="******" id="ipt_confirm_senha">
-      <button onclick="cadastrar()">Cadastrar</button>
-
-      <p>Já tem conta? <a href="login.html">Login</a></p>
+    <!-- COMEÇO DA NAVBAR -->
+    <div class="header">
+        <h1 class="titlemenu">R A T Z </h1>
+        <a href="index.html" class="btn">Home</a>
+        <a href="login.html" class="btn">Login</a>
     </div>
-    <div class="foto"></div>
-  </div>
+    <!-- FIM DA NAVBAR -->
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer">
-
-      <div class="row">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">Sign up</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div class="row">
-        RATZ Copyright © 2022 Sptech - All rights reserved
-      </div>
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
     </div>
-  </footer>
+    <div class="container">
+        <div class="form">
+            <span class="tipo_campo">Nome:</span>
+            <input id="nome_input" type="text" placeholder="Seu nome">
+
+            <span class="tipo_campo">E-mail:</span>
+            <input id="email_input" type="text" placeholder="email@provedor.com">
+
+            <span class="tipo_campo">Senha:</span>
+            <input id="senha_input" type="password" placeholder="******">
+
+            <span class="tipo_campo">Confirmação da Senha:</span>
+            <input id="confirmacao_senha_input" type="password" placeholder="******">
+
+            <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
+            <p>Já possui tem conta? <a href="login.html"> Login</a></p>
+
+            <div style="display: none;" id="div_aguardar" class="loading-div">
+                <img src="./style/assets/gif/circle-loading.gif" id="loading-gif">
+            </div>
+
+            <div id="div_erros_login">
+
+            </div>
+        </div>
+        <div class="foto"></div>
+    </div>
+    <!--footer inicio-->
+    <footer>
+        <div class="footer">
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                RATZ Copyright © 2022 Sptech - All rights reserved
+            </div>
+        </div>
+    </footer>
+    <!--footer fim-->
+
+
 </body>
 
 </html>
+
 <script>
-  function cadastrar() {
-    var nome = ipt_nome.value
-    var sobrenome = ipt_sobrenome.value
-    var email = ipt_email.value
-    var senha = ipt_senha.value
-    var confirmSenha = ipt_confirm_senha.value
+    function cadastrar() {
+        aguardar();
 
-    if (nome == "" || sobrenome == "" || email == "" || cpf == "" || cel == "" || senha == "" || confirmSenha == "") {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-      alert(`Por favor inserir dados nos campos abaixo.`)
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-    } else if (senha != confirmSenha) {
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
 
-      alert(`As senhas inseridas não coincidem.`)
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
 
-    } else if (Number.isNaN(cpf) || Number.isNaN(cel)) {
+            console.log("resposta: ", resposta);
 
-      alert(`Por favor verifique se os números nos campos cpf e celular são válidos`)
+            if (resposta.ok) {
+                cardErro.style.display = "block";
 
-    } else if (nome == Number || sobrenome == Number) {
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-      alert(`Por favor insira um nome válido.`)
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
 
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
 
-    } else {
-
-      alert(`Cadastro feito com sucesso!`)
+        return false;
     }
 
-  }
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

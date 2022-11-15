@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="../style/calc2.css">
+  <link rel="stylesheet" href="../style/navfooter.css">
+
+</head>
+
+<body>
+  <!-- COMEÇO DA NAVBAR -->
+  <div class="header">
+    <h1 class="titlemenu">R A T Z </h1>
+    <a href="cuidados.html" class="btn">Cuidados</a>
+    <a href="calculadorapart1.html" class="btn">Calculadora</a>
+    <a href="galeria.html" class="btn">Galeria</a>
+    <a href="mural.html" class="btn">Mural</a>
+  </div>
+  <!-- FIM DA NAVBAR -->
+
+
+  <div class="bannerteste">
+    <div class="container">
+      <div class="box">
+        <div class="calculadora">
+          <p>Largura (cm):</p>
+          <input type="text" id="ipt_largura" placeholder="Inserir um valor">
+          <br><br>
+
+          <p>Altura (cm):</p>
+          <input type="text" id="ipt_altura" placeholder="Inserir um valor">
+          <br><br>
+
+          <p>Profundidade (cm):</p>
+          <input type="text" id="ipt_profundidade" placeholder="Inserir um valor">
+
+          <br><br><br>
+
+          <button onclick="calcular()">R E S U L T A D O</button>
+          <br><br>
+        </div>
+        <div style="border-left: 1px solid black; padding-left: 50px;" id="resultado">
+          <img src="../style/assets/images/paperrat.jpg" width="500px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Log in</a></li>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        RATZ Copyright © 2022 Sptech - All rights reserved
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+<script>
+  function calcular() {
+
+    var largura = Number(ipt_largura.value);
+    var altura = Number(ipt_altura.value);
+    var profundidade = Number(ipt_profundidade.value);
+
+    if (largura == 0) {
+      alert('Por favor insira um número válido.')
+    } else if (altura == 0) {
+      alert('Por favor insira um valor válido.')
+    } else if (profundidade == 0) {
+      alert('Por favor insira um valor válido.')
+    } else if (altura < 60 && largura < 60 && profundidade < 40) {
+
+      resultado.innerHTML = `<span style="color: red;">Sua gaiola não é apta para criar ratos.</span>`
+
+    } else if (altura == 60 && largura == 60 && profundidade == 40) {
+      resultado.innerHTML = `Sua gaiola comporta 3 fêmeas ou 2 machos.`
+    } else if (altura == 85 && largura == 45 && profundidade == 48) {
+      resultado.innerHTML = `Sua gaiola comporta 7 fêmeas ou 5 machos.`
+    } else if (altura == 98 && largura == 50 && profundidade == 120) {
+      resultado.innerHTML = `Sua gaiola comporta 13 fêmeas ou 10 machos.`
+    } else if (altura == 90 && largura == 60 && profundidade == 60) {
+      resultado.innerHTML = `Sua gaiola comporta 13 fêmeas ou 10 machos.`
+    } else if (altura == 90 && largura == 60 && profundidade == 120) {
+      resultado.innerHTML = `Sua gaiola comporta 11 machos e 15 fêmeas.`
+    } else if (altura == 83 && largura == 81 && profundidade == 43) {
+      resultado.innerHTML = `Sua gaiola comporta 4 machos ou 6 fêmeas.`
+    } else if (altura == 75 && largura == 70 && profundidade == 80) {
+      resultado.innerHTML = `Sua gaiola comporta 4 machos ou 6 fêmeas.`
+    } else if (altura == 60 && largura == 60 && profundidade == 60) {
+      resultado.innerHTML = `Sua gaiola comporta 3 machos ou 5 fêmeas.`
+    } else if (altura == 60 && largura == 60 && profundidade == 120) {
+      resultado.innerHTML = `Sua gaiola comporta 7 machos ou 10 fêmeas.`
+    } else if (altura == 80 && largura == 50 && profundidade == 52) {
+      resultado.innerHTML = `Sua gaiola comporta 3  machos ou 4 fêmeas.`
+    } else if (altura == 80 && largura == 10 && profundidade == 80) {
+      resultado.innerHTML = `Sua gaiola comporta 7 machos ou 9 fêmeas.`
+    } else if (altura == 60 && largura == 93 && profundidade == 60) {
+      resultado.innerHTML = `Sua gaiola comporta 5  machos ou 7 fêmeas.`
+    }
+
+
+    ipt_altura.value = ""
+    ipt_largura.value = ""
+    ipt_profundidade.value = ""
+  }
+
+
+</script>

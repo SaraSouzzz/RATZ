@@ -8,66 +8,31 @@ li {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
+  -moz-transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
 }
 
-.header{
-  display: flex;
-  box-sizing: border-box;
-  padding: 2%;
-  align-items: center;
-  justify-content: space-between;
-  height: 90px;
-  background-color: black;
-}
-.titlemenu{
+
+.btn {
   color: white;
-}
-/* COMEÇO DA NAVBAR */
-.navMenu a {
-  color:white;
+  background: rgb(0, 0, 0);
+  padding: 10px 20px;
+  font-size: 12px;
   text-decoration: none;
-  font-size: 20px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: 500;
-  /* Isso mantem o menu deitado para a animação funcionar. */
-  display: inline-block;
-  /* Aqui separa as letras para a animação da bolinha abaixo do menu funcionar. */
-  width: 80px;
-  /* Tempo da animação de mudança de cor funcionar. */
-  transition: all 0.2s ease-in-out;
 }
 
-.navMenu .dot {
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
+.btn:hover {
+  border: none;
+  background: rgb(0, 0, 0);
+  background: #fff;
+  padding: 20px 20px #000;
+  color: #1b1b1b;
 }
-
-/* Animação da bolinhas com os filhos (itens do menu) */
-.navMenu a:nth-child(1):hover~.dot {
-  -webkit-transform: translateX(30px);
-  opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover~.dot {
-  -webkit-transform: translateX(110px);
-  opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover~.dot {
-  -webkit-transform: translateX(200px);
-  opacity: 1;
-}
-
-.navMenu a:nth-child(4):hover~.dot {
-  -webkit-transform: translateX(285px);
-  opacity: 1;
-}
-
-
 
 .footer {
   background: #000;
