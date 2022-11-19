@@ -30,9 +30,7 @@ box-shadow: 0px 0px 20px 0px rgba(92,92,92,1);
   padding: 1.5%;
   width: 100%;
 }
-#form_postagem button{
-  
-}
+
 input {
   outline: none;
   margin-bottom: 7%;
@@ -78,4 +76,71 @@ a {
   font-size: 16px;
   margin-top: 1%;
   padding-left: 6%;
+}
+
+
+.publicacao {
+  box-sizing: border-box;
+  padding: 2%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(92,92,92,1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(92,92,92,1);
+  box-shadow: 0px 0px 20px 0px rgba(92,92,92,1);
+}
+
+#inputNumero2{
+  margin-left: 10px;
+}
+
+.publicacao-nome{
+
+  margin-left: 10px;
+}
+.div-buttons {
+  height: 75px;
+  box-sizing: border-box;
+  padding-left: 1%;
+}
+
+.div-buttons button {
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+}
+
+.publicacao-descricao {
+  border-top: 1px solid black;
+  margin-top: 10px;
+  height: 100px;
+  box-sizing: border-box;
+  padding-top: 1%;
+}
+
+#mural-aviso{
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+.div-form {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  width: 50%;
+  padding: 2%;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(92, 92, 92, 1);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(92, 92, 92, 1);
+  box-shadow: 0px 0px 20px 0px rgba(92, 92, 92, 1);
+}
+
+
+.container {
+  width: 80%;
+}
+
+#form_postagem textarea {
+  outline: none;
+  box-sizing: border-box;
+  padding: 1.5%;
+  width: 100%;
 }
