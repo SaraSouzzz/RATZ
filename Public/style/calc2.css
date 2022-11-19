@@ -49,25 +49,6 @@ li {
 }
 
 /* Animação da bolinhas com os filhos (itens do menu) */
-.navMenu a:nth-child(1):hover~.dot {
-    -webkit-transform: translateX(30px);
-    opacity: 1;
-}
-
-.navMenu a:nth-child(2):hover~.dot {
-    -webkit-transform: translateX(110px);
-    opacity: 1;
-}
-
-.navMenu a:nth-child(3):hover~.dot {
-    -webkit-transform: translateX(200px);
-    opacity: 1;
-}
-
-.navMenu a:nth-child(4):hover~.dot {
-    -webkit-transform: translateX(285px);
-    opacity: 1;
-}
 
 /* FIM DA NAVBAR */
 

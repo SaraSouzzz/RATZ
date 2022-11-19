@@ -13,33 +13,33 @@
 
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
-    <!-- <body onload="validarSessao()"> -->
+<body >
+    <!-- onload="validarSessao(), atualizarFeed()" -->
 
     <!-- COMEÇO DA NAVBAR -->
     <div class="header">
-        <h1 class="titlemenu">R A T Z </h1>
-        <a href="cuidados.html" class="btn">Cuidados</a>
-        <a href="calculadorapart1.html" class="btn">Calculadora</a>
-        <a href="galeria.html" class="btn">Galeria</a>
-        <a href="mural.html" class="btn">Mural</a>
-        </a>
+        <div class="container-header">
+            <div>
+               <a href="../index.html"><h1 class="titlemenu">R A T Z </h1></a> 
+            </div>
+            <div>
+                <a href="cuidados.html" class="btn">Cuidados</a>
+                <a href="calculadorapart1.html" class="btn">Calculadora</a>
+                <a href="galeria.html" class="btn">Galeria</a>
+                <a href="mural.html" class="btn">Mural</a>
+            </div>
+        </div>
     </div>
     <!-- FIM DA NAVBAR -->
 
     <div class="janela">
-
-
         <div class="header-left">
-
             <div class="hello">
-                <h1>Olá, <span id="b_usuario">usuário</span>!</h1>
+                <h2>Olá, <span id="b_usuario">usuário</span>!</h2>
             </div>
-
         </div>
 
         <div class="dash-right">
-
             <div class="avisos">
                 <div class="container">
                     <h1>Publicar um aviso</h1>
@@ -67,9 +67,6 @@
                     </div>
                 </div>
             </div>
-
-
-
 
             <!-- MODAL -->
             <!-- <div id="div_modal" class="div-modal">
