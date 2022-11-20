@@ -10,6 +10,16 @@ li {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.bt_cad {
+    text-decoration: none;
+    color: white;
+}
+
 .main {
     display: flex;
     align-items: center;
@@ -129,9 +139,8 @@ li {
     background-color: black;
     margin-bottom: 4%;
 }
-.cards{
-    
-}
+
+.cards {}
 
 .container-adopt {
     height: 80vh;

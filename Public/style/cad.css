@@ -10,6 +10,8 @@ li {
   font-family: 'Roboto', sans-serif;
 }
 
+
+
 /* COMEÇO DA NAVBAR */
 .navMenu {
   margin-left: 70%;
@@ -51,7 +53,7 @@ li {
   width: 50%;
   display: flex;
   justify-content: center;
-  
+
   flex-direction: column;
   margin-left: 5%;
 }
@@ -114,43 +116,41 @@ a {
 
 }
 
-.footer{
-  background:#000;
-  padding:30px 0px;
+.footer {
+  background: #000;
+  padding: 30px 0px;
   font-family: 'Play', sans-serif;
-  text-align:center;
-  }
-  
-  .footer .row{
-  width:100%;
-  margin:1% 0%;
-  padding:0.6% 0%;
-  color:gray;
-  font-size:0.8em;
-  }
-  
-  .footer .row a{
-  text-decoration:none;
-  color:gray;
-  transition:0.5s;
-  }
-  
-  .footer .row a:hover{
-  color:#fff;
-  }
-  
-  .footer .row ul{
-  width:100%;
-  }
-  
-  .footer .row ul li{
-  display:inline-block;
-  margin:0px 30px;
-  }
-  
-  .footer .row a i{
-  font-size:2em;
-  margin:0% 1%;
-  }
-  
- 
+  text-align: center;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
