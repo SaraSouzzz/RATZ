@@ -14,21 +14,23 @@
   <!-- COMEÇO DA NAVBAR -->
   <div class="header">
     <div class="container-header">
-        <div>
-           <a href="../index.html"><h1 class="titlemenu">R A T Z </h1></a> 
-        </div>
-        <div>
-            <a href="cuidados.html" class="btn">Cuidados</a>
-            <a href="calculadorapart1.html" class="btn">Calculadora</a>
-            <a href="galeria.html" class="btn">Galeria</a>
-            <a href="mural.html" class="btn">Mural</a>
-        </div>
+      <div>
+        <a href="../index.html">
+          <h1 class="titlemenu">R A T Z </h1>
+        </a>
+      </div>
+      <div>
+        <a href="cuidados.html" class="btn">Cuidados</a>
+        <a href="calculadorapart1.html" class="btn">Calculadora</a>
+        <a href="galeria.html" class="btn">Galeria</a>
+        <a href="mural.html" class="btn">Mural</a>
+      </div>
     </div>
-</div>
+  </div>
   <!-- FIM DA NAVBAR -->
 
   <h1>Galeria de fotos </h1>
-  <div class="container">
+  <!-- <div class="container">
     <div class="top">
       <ul>
         <li><a href="#img_1"><img src="../style/assets/galeria/jinxlilianenem.jpg"></a></li>
@@ -65,10 +67,53 @@
           <a href="#_14" class="lightbox trans" id="img_14"><img src="../style/assets/galeria/pezinhosbaixo.jpg"></a>
           <a href="#_15" class="lightbox trans" id="img_15"><img src="../style/assets/galeria/panqueca.jpg"></a>
           <a href="#_16" class="lightbox trans" id="img_16"><img src="../style/assets/galeria/namirindo.jpg"></a>
-    </div>
-  </div>
-  <div class="ratope">
+    </div> -->
+  <!-- </div> -->
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
 
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 5</div>
+      <img src="chegada.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 5</div>
+      <img src="namijinxabraçadas.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 5</div>
+      <img src="namirindo.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 5</div>
+      <img src="montinhonovaso.jpg" style="width:100%">
+      <div class="text">Caption Four</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 5</div>
+      <img src="namiperfeita.jpeg" style="width:100%">
+      <div class="text">Caption Four</div>
+    </div>
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
   </div>
 
   <footer>
@@ -92,3 +137,20 @@
 </body>
 
 </html>
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+
+</script>
