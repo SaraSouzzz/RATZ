@@ -13,23 +13,32 @@ export default [
         { option: "Aspen", correct: true },
         { option: "Areia de gato", correct: true },
         { option: "Serragem", correct: false },
-        { option: "Areia de celulose", correct: false },
+        { option: "Areia de celulose", correct: true },
+        { option: "Feno", correct: false},
       ],
     },
     {
-      question: "Quanto é 10 x 8?",
+      question: "Podemos misturar fêmeas com machos?",
       answers: [
-        { option: "800", correct: false },
-        { option: "90", correct: false },
-        { option: "80", correct: true },
+        { option: "Sim", correct: false },
+        { option: "Não", correct: true },
+
       ],
     },
     {
-      question: "Quanto é 7 x 7?",
+      question: "Que tipo de ração ratos comem?",
       answers: [
-        { option: "70", correct: false },
-        { option: "56", correct: false },
-        { option: "49", correct: true },
+        { option: "Nutrópica", correct: true  },
+        { option: "Equilibrato", correct: true  },
+        { option: "Serelepe", correct: false },
+        { option: "Ração de cachorro/gato", correct: false },
+      ],
+    },
+    {
+      question: "Você tem como guardar dinheiro para despesa médica?",
+      answers: [
+        { option: "Não e nem vou", correct: false  },
+        { option: "Sim, eles sentem dor como qualquer outro animal", correct: true  },
       ],
     },
   ];
