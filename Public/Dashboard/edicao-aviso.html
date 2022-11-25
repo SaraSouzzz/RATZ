@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de aviso</title>
+
+    <link rel="stylesheet" href="../style/navfooter.css">
+    <link rel="stylesheet" href="../style/mural.css">
+    <script src="../js/funcoes.js"></script>
+
+</head>
+
+<body onload="validarSessao(), listarInfosDeUm()">
+    <!--  -->
+    <!-- <body onload="validarSessao()"> -->
+    <!-- COMEÇO DA NAVBAR -->
+    <div class="header">
+        <div class="container-header">
+            <div>
+                <a href="../index.html">
+                    <h1 class="titlemenu">R A T Z </h1>
+                </a>
+            </div>
+            <div>
+                <a href="cuidados.html" class="btn">Cuidados</a>
+                <a href="calculadorapart1.html" class="btn">Calculadora</a>
+                <a href="galeria.html" class="btn">Galeria</a>
+                <a href="mural.html" class="btn">Mural</a>
+                <a href="quiz.html" class="btn">Quiz</a>
+            </div>
+        </div>
+    </div>
+    <!-- FIM DA NAVBAR -->
+
+    <div class="dash-right">
+
+        <div class="avisos">
+            <div class="container">
+                <h1>Editar um aviso</h1>
+                <div class="div-form">
+                    <label>
+                        ID:
+                        <br>
+                        <input id="input_id" maxlength="100" type="text" style="color: rgb(196, 196, 196)" disabled>
+                    </label>
+                    <label>
+                        Autor:
+                        <br>
+                        <input id="input_nome" maxlength="100" type="text" style="color: rgb(196, 196, 196)" disabled>
+                    </label>
+                    <label>
+                        Título:
+                        <br>
+                        <input id="input_titulo" maxlength="100" type="text" style="color: rgb(196, 196, 196)" disabled>
+                    </label>
+                    <br>
+                    <label>
+                        Descrição (máximo de 250 caracteres):
+                        <br>
+                        <textarea id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                    </label>
+                    <br>
+                    <button onclick="editar()">Editar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer style="margin-top: 120px;">
+        <div class="footer">
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                RATZ Copyright © 2022 Sptech - All rights reserved
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function listarInfosDeUm() {
+        console.log("Criar função de trazer informações de post escolhido");
+    }
+
+    function editar() {
+        fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                descricao: textarea_descricao.value
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Post atualizado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                window.location = "/dashboard/mural.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+</script>
