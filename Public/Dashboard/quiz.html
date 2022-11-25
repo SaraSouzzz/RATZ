@@ -8,6 +8,7 @@
   <title>Quiz</title>
   <link rel="stylesheet" href="/Public/style/navfooter.css">
   <link rel="stylesheet" href="/Public/style/quizz.css">
+
 </head>
 
 <body>
@@ -30,17 +31,29 @@
   </div>
   <!-- FIM DA NAVBAR -->
   <h2>Vamos ver se você tem pontuação suficiente para criar ratos?</h2>
-
   <div class="bannerteste">
-    <input id="tipo" type="radio">
-    <button onclick="teste()">Teste</button>
-        </div>
-        <!-- <div style="border-left: 1px solid black; padding-left: 50px;" id="resultado">
-          <img src="/Public/style/assets/images/paperrat2.jpg" width="400px">
-        </div> -->
+    <div class="container">
+      <div class="box">
+        <div class="calculadora">
+
+          <main>
+            <div class="content">
+              <span class="spnQtd"></span>
+              <span class="question"></span>
+              <div class="answers"></div>
+            </div>
+            <div class="finish">
+              <span></span>
+              <button>Reiniciar</button>
+            </div>
+          </main>
+          
+          <script src="script.js" type="module"></script>
+
       </div>
     </div>
   </div>
+</div>
   <!-- FOOTER -->
   <footer>
     <div class="footer">
@@ -60,11 +73,7 @@
       </div>
     </div>
   </footer>
+  
 </body>
 
 </html>
-<script>
-function teste(){
-  var teste = tipo.valyue
-}
-</script>
