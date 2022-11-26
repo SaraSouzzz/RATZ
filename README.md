@@ -1,5 +1,5 @@
 
-![Logo](RATZ/Public/style/assets/images/paperrat.jpg)
+![Logo](/Public/style/assets/images/paperrat.jpg)
 
 # RATZ
 Projeto individual feito pela aluna Sara de Souza Costa na faculdade SPTECH
