@@ -1,43 +1,32 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h2{
+h2 {
   display: flex;
   justify-content: center;
   margin-top: 4%;
 }
 
-main {
+#quiz {
   background-color: white;
   padding: 10px;
-  margin-bottom: 7%;
+  margin-bottom: 2%;
   margin-top: 5%;
-  margin-left: 24%;
+  margin-left: 25%;
+  padding-left: 2%;
   border-radius: 10px;
   width: 50%;
-  height: 350px;
+  height: 850px;
+  gap: 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 15px 14px 19px 4px rgba(0,0,0,0.63);
-  -webkit-box-shadow: 15px 14px 19px 4px rgba(0,0,0,0.63);
-  -moz-box-shadow: 15px 14px 19px 4px rgba(0,0,0,0.63);
-}
-
-.content {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
-  width: 100%;
-  gap: 10px;
-}
-
-.spnQtd {
-  text-align: end;
+  justify-content: center;
+  box-shadow: 15px 14px 19px 4px rgba(0, 0, 0, 0.63);
+  -webkit-box-shadow: 15px 14px 19px 4px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: 15px 14px 19px 4px rgba(0, 0, 0, 0.63);
 }
 
 .answers {
@@ -46,23 +35,31 @@ main {
   gap: 5px;
 }
 
-button {
+#results {
+  margin-left: 45%;
+  margin-bottom: 4%;
+  font-size: 25px;
   width: 100%;
+
+}
+
+p {
+  width: 50%;
+  text-align: center;
+  margin-left: -20%;
+  margin-top: 1%;
+}
+
+button {
+  width: 20%;
+  height: 40px;
   text-align: center;
   padding: 5px;
   border: none;
   border-radius: 2px;
+  margin-left: 38%;
+  margin-bottom: 5%;
   cursor: pointer;
   background-color: black;
   color: white;
-}
-
-.finish {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.finish button {
-  text-align: center;
 }

@@ -94,9 +94,39 @@ function cadastrar(req, res) {
     }
 }
 
+function registroponto(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var pontuacao = req.body.pontuacaoServer;
+    var fk_usuario = req.body.fk_usuarioServer;
+
+    // Faça as validações dos valores
+    if (pontuacao == undefined) {
+        res.status(400).send("Sua pontuação está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.registroponto(pontuacao, fk_usuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    registroponto
 }

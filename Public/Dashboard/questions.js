@@ -1,44 +1,64 @@
 export default [
     {
-      question: "Qual a medida miníma para dois ratos?",
-      answers: [
-        { option: "60x60x40", correct: true },
-        { option: "30x30x40", correct: false },
-        { option: "60x30x20", correct: false },
-      ],
+      question: "1) Qual a medida miníma de uma gaiola para dois ratos?",
+      answers: {
+        a: "60x60x40",
+        b: "30x30x40",
+        c: "60x30x20",
+      },
+      correctAnswer: 'a'
     },
     {
-      question: "Qual o tipo de forração usar?",
-      answers: [
-        { option: "Aspen", correct: true },
-        { option: "Areia de gato", correct: true },
-        { option: "Serragem", correct: false },
-        { option: "Areia de celulose", correct: true },
-        { option: "Feno", correct: false},
-      ],
+      question: "2) Qual o tipo de forração usar no banheiro?",
+      answers: {
+        a: "Feno", 
+        b: "Aspen",
+        c: "Serragem", 
+      },
+      correctAnswer: 'b'
     },
     {
-      question: "Podemos misturar fêmeas com machos?",
-      answers: [
-        { option: "Sim", correct: false },
-        { option: "Não", correct: true },
-
-      ],
+      question: "3) Podemos misturar fêmeas com machos?",
+      answers: {
+        a: "Sim",
+        b: "Não", 
+      },
+      correctAnswer: 'b'
     },
     {
-      question: "Que tipo de ração ratos comem?",
-      answers: [
-        { option: "Nutrópica", correct: true  },
-        { option: "Equilibrato", correct: true  },
-        { option: "Serelepe", correct: false },
-        { option: "Ração de cachorro/gato", correct: false },
-      ],
+      question: "4) Que tipo de ração seus ratos vão comer?",
+      answers: {
+        a: "Nutrópica",
+        b: "Ração de hamster",
+        c: "Serelepe", 
+        d: "Ração de cachorro/gato",
+      },
+      correctAnswer: 'a'
     },
     {
-      question: "Você tem como guardar dinheiro para despesa médica?",
-      answers: [
-        { option: "Não e nem vou", correct: false  },
-        { option: "Sim, eles sentem dor como qualquer outro animal", correct: true  },
-      ],
+      question: "5) Você tem como guardar dinheiro para despesas médicas?",
+      answers: {
+        a: "Não, não posso gastar muito dinheiro",
+        b: "Sim, terei uma poupança para emergência médias",
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "6) Você tem outros animais?",
+      answers: {
+        a: "Sim, não vou misturar contato",
+        b: "Sim, terei apresentação entre eles e vigiar nas solturas",
+        c: "Sim, confio neles que não irão comer os ratos",
+        d: "Não, somente os ratos",
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "6) Você leu o quadro de cuidados iniciais na página Cuidados?",
+      answers: {
+        a: "Não, precisa?",
+        b: "Sim, fiz todas as pesquisas nescessarias para o cuidados corretos", 
+      },
+      correctAnswer: 'b'
     },
   ];

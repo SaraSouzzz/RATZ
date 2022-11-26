@@ -36,24 +36,17 @@
       <div class="box">
         <div class="calculadora">
 
-          <main>
-            <div class="content">
-              <span class="spnQtd"></span>
-              <span class="question"></span>
-              <div class="answers"></div>
-            </div>
-            <div class="finish">
-              <span></span>
-              <button>Reiniciar</button>
-            </div>
-          </main>
-          
-          <script src="script.js" type="module"></script>
+          <div id="quiz">
 
+          </div>
+          <button id="submit">Resultado</button>
+          <div id="results"></div>
+
+
+        </div>
       </div>
     </div>
   </div>
-</div>
   <!-- FOOTER -->
   <footer>
     <div class="footer">
@@ -73,7 +66,189 @@
       </div>
     </div>
   </footer>
-  
+
 </body>
 
 </html>
+<script>
+  var myQuestions = [
+    {
+      question: "1) Qual a medida miníma de uma gaiola para dois ratos?",
+      answers: {
+        a: "60x60x40",
+        b: "30x30x40",
+        c: "60x30x20",
+      },
+      correctAnswer: 'a'
+    },
+    {
+      question: "2) Qual o tipo de forração usar no banheiro?",
+      answers: {
+        a: "Feno",
+        b: "Aspen",
+        c: "Serragem",
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "3) Podemos misturar fêmeas com machos?",
+      answers: {
+        a: "Sim",
+        b: "Não",
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "4) Que tipo de ração seus ratos vão comer?",
+      answers: {
+        a: "Nutrópica",
+        b: "Ração de hamster",
+        c: "Serelepe",
+        d: "Ração de cachorro/gato",
+      },
+      correctAnswer: 'a'
+    },
+    {
+      question: "5) Você tem como guardar dinheiro para despesas médicas?",
+      answers: {
+        a: "Não, não posso gastar muito dinheiro",
+        b: "Sim, terei uma poupança para emergência médias",
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "6) Você tem outros animais?",
+      answers: {
+        a: "Sim, não vou misturar contato",
+        b: "Sim, terei apresentação entre eles e vigiar nas solturas",
+        c: "Sim, confio neles que não irão comer os ratos",
+        d: "Não, somente os ratos",
+      },
+      correctAnswer: 'b'
+    },
+    {
+      question: "6) Você leu o quadro de cuidados iniciais na página Cuidados?",
+      answers: {
+        a: "Não, precisa?",
+        b: "Sim, fiz todas as pesquisas nescessarias para o cuidados corretos",
+      },
+      correctAnswer: 'b'
+    },
+  ];
+
+  var quizContainer = document.getElementById('quiz');
+  var resultsContainer = document.getElementById('results');
+  var submitButton = document.getElementById('submit');
+
+  generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+  function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
+
+    function showQuestions(questions, quizContainer) {
+      // precisaremos de um lugar para armazenar a saída e as opções de resposta
+      var output = [];
+      var answers; // poderia ter dado outro nome, alem do mais, eu mesmo me confundi :/
+
+      // para cada questão
+      for (var i = 0; i < questions.length; i++) {
+
+        // mas, primeiro resetamos a lista de questões
+        answers = [];
+
+        // e aqui faremos para cada resposta na questão.
+        for (letter in questions[i].answers) {
+
+          // Aqui será escrito para html para usar o Radio.
+          answers.push(
+            '<label>'
+            + '<input type="radio" name="question' + i + '" value="' + letter + '">'
+            //	+ letter + ') ' vou deixar a letra comentada, porque achei melhor assim
+            + questions[i].answers[letter]
+            + '</label>'
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          '<div class="question">' + questions[i].question + '</div>'
+          + '<div class="answers">' + answers.join('') + '</div>'
+        );
+      }
+
+      // finally combine our output list into one string of html and put it on the page
+      quizContainer.innerHTML = output.join('');
+    }
+
+
+    function showResults(questions, quizContainer, resultsContainer) {
+
+
+      var answerContainers = quizContainer.querySelectorAll('.answers');
+
+
+      var userAnswer = '';
+      var numCorrect = 0;
+
+
+      for (var i = 0; i < questions.length; i++) {
+
+        // agora ele vai virar a letra que esta marcada.
+        userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
+
+        if (userAnswer === questions[i].correctAnswer) {
+          numCorrect++;
+          answerContainers[i].style.color = 'lightgreen';
+        } else {
+          answerContainers[i].style.color = 'red';
+        }
+      }
+
+
+      if (numCorrect <= 3) {
+        resultsContainer.innerHTML = numCorrect + ' de ' + questions.length + '<br><p> Você precisa estudar bastante ainda para criar ratos.</p>';
+      } else if (numCorrect <= 4) {
+        resultsContainer.innerHTML = numCorrect + ' de ' + questions.length + '<br> <p>Você precisa estudar um pouco mais para criar ratos.</p>';
+      } else if (numCorrect <= 6) {
+        resultsContainer.innerHTML = numCorrect + ' de ' + questions.length + '<br><p>Muito bem, você está <b>quase</b> preparado para virar pai/mãe de rato 🐭💗</p>';
+      } else if (numCorrect == 7) {
+        resultsContainer.innerHTML = numCorrect + ' de ' + questions.length + '<br><p>Muito bem, você está preparado para virar pai/mãe de rato 🐭💗</p>';
+      }
+      registroponto(numCorrect);
+    }
+
+    // show questions right away
+    showQuestions(questions, quizContainer);
+
+    // on submit, show results
+    submitButton.onclick = function () {
+      showResults(questions, quizContainer, resultsContainer);
+    }
+  }
+
+  function registroponto(numCorrect) {
+    var fk_usuario = sessionStorage.ID_USUARIO;
+
+    fetch("/usuarios/registroponto", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        pontuacaoServer: numCorrect,
+        fk_usuarioServer: fk_usuario
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+    return false;
+  }
+
+
+</script>
