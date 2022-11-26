@@ -17,7 +17,7 @@ Foi usado HTML/CSS, JS e muito carinho para concluir este projeto.
 
 ## Documentação
 
-[Documentação](https://link-da-documentação)
+[Documentação](/Documentação/Ratz.docx)
 
 
 ## Autores
