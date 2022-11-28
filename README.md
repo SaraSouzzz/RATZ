@@ -1,5 +1,5 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](/Public/style/assets/images/blackrat.png)
 
 # RATZ
 Projeto individual feito pela aluna Sara de Souza Costa na faculdade SPTECH
@@ -17,7 +17,7 @@ Foi usado HTML/CSS, JS e muito carinho para concluir este projeto.
 
 ## Documentação
 
-[Documentação](https://link-da-documentação)
+[Documentação](/Documentação/Ratz.docx)
 
 
 ## Autores
