@@ -19,7 +19,7 @@ CREATE TABLE Quiz(
 idquiz int auto_increment primary key,
 pontuacao int,
 fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(idusuario)
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
 -- alter table usuario add column sobrenome varchar(50);
