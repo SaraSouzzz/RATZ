@@ -1,5 +1,5 @@
 
-![Logo](/Public/style/assets/images/blackrat.png)
+![Logo](/Public/style/assets/images/icon.png)
 
 # RATZ
 Projeto individual feito pela aluna Sara de Souza Costa na faculdade SPTECH
