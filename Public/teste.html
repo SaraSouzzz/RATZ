@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual rato você seria?</title>
+    <link rel="icon" href="/style/assets/images/icon.jpg">
+    <link rel="stylesheet" href="/style/navfooter.css">
+    <link rel="stylesheet" href="style/calc2.css">
+</head>
+<body>
+       <!-- COMEÇO DA NAVBAR -->
+       <div class="header">
+        <div class="container-header">
+            <div>
+                <a href="index.html">
+                    <h1 class="titlemenu">R A T Z </h1>
+                </a>
+            </div>
+            <div>
+                <a href="index.html" class="btn">Home</a>
+                <a href="login.html" class="btn">Login</a>
+                <a href="cadastro.html" class="btn">Cadastro</a>
+                <a href="teste.html" class="btn">Teste</a>
+            </div>
+        </div>
+    </div>
+    <!-- FIM DA NAVBAR -->
+
+    <h1 style="display: flex; justify-content: center; margin-top: 3%;">Qual rato você seria?</h1>
+
+    <div class="bannerteste">
+        <div class="container">
+          <div class="box">
+            <div class="calculadora">
+    
+              <button onclick="calcular()">VER RESULTADO</button>
+              <br><br>
+            </div>
+            <div style="border-left: 1px solid black; padding-left: 50px;" id="resultado">
+              <img src="../style/assets/images/paperrat.jpg" width="500px">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--footer inicio-->
+      <footer>
+        <div class="footer">
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                RATZ Copyright © 2022 Sptech - All rights reserved
+            </div>
+        </div>
+    </footer>
+    <!--footer fim-->
+</body>
+</html>
+<script>
+    function calcular(){
+        var random = (Math.random() * 3).toFixed(0);
+
+        if(random == 1){
+            resultado.innerHTML = `<img src="https://static.quizur.com/i/b/575cacf39d10d7.57987376rato.jpg" width="400px"> <br> Você seria um ratinho dorminhoco`
+        } else if(random == 2){
+            resultado.innerHTML = `<img src="https://cdn.britannica.com/26/65326-050-53232216/Norway-rat.jpg" width="400px"> <br> Você seria um ratinho selvagem`
+        } else if(random == 3){
+            resultado.innerHTML = `<img src="https://www.snexplores.org/wp-content/uploads/2022/09/1440_rat_historian_feat-1030x580.jpg" width="400px"> <br> Você seria um ratinho estudioso`
+        } else if(random == 4){
+            resultado.innerHTML = `<img src="
+        https://www.whitehousefarmcentre.co.uk/media/1309/rat.jpg?crop=0.017552408204181195,0.11576800903396661,0.37486423088185444,0.24446141472569158&cropmode=percentage&width=500&height=350&rnd=132061234560000000" width="400px"> <br> Você seria um ratinho aventureiro`
+        }
+
+    }
+
+
+
+
+</script>
