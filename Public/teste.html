@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,10 @@
     <link rel="stylesheet" href="/style/navfooter.css">
     <link rel="stylesheet" href="style/calc2.css">
 </head>
+
 <body>
-       <!-- COMEÇO DA NAVBAR -->
-       <div class="header">
+    <!-- COMEÇO DA NAVBAR -->
+    <div class="header">
         <div class="container-header">
             <div>
                 <a href="index.html">
@@ -32,21 +34,21 @@
 
     <div class="bannerteste">
         <div class="container" style="display: flex; margin-left: 25%;">
-          <div class="box">
-            <div class="calculadora">
-    
-              <button onclick="calcular()">VER RESULTADO</button>
-              <br><br>
-            </div>
-            <div style="border-left: 1px solid black; padding-left: 50px;" id="resultado">
-              <img src="../style/assets/images/paperrat.jpg" width="500px">
-            </div>
-          </div>
-        </div>
-      </div>
+            <div class="box">
+                <div class="calculadora">
 
-      <!--footer inicio-->
-      <footer>
+                    <button onclick="calcular()">VER RESULTADO</button>
+                    <br><br>
+                </div>
+                <div style="border-left: 1px solid black; padding-left: 50px;" id="resultado">
+                    <img src="../style/assets/images/paperrat.jpg" width="500px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer inicio-->
+    <footer>
         <div class="footer">
 
             <div class="row">
@@ -66,18 +68,19 @@
     </footer>
     <!--footer fim-->
 </body>
+
 </html>
 <script>
-    function calcular(){
+    function calcular() {
         var random = (Math.random() * 3).toFixed(0);
 
-        if(random == 1){
+        if (random == 1) {
             resultado.innerHTML = `<img src="https://static.quizur.com/i/b/575cacf39d10d7.57987376rato.jpg" width="400px"> <br> Você seria um ratinho dorminhoco`
-        } else if(random == 2){
+        } else if (random == 2) {
             resultado.innerHTML = `<img src="https://cdn.britannica.com/26/65326-050-53232216/Norway-rat.jpg" width="400px"> <br> Você seria um ratinho selvagem`
-        } else if(random == 3){
+        } else if (random == 3) {
             resultado.innerHTML = `<img src="https://www.snexplores.org/wp-content/uploads/2022/09/1440_rat_historian_feat-1030x580.jpg" width="400px"> <br> Você seria um ratinho estudioso`
-        } else if(random == 4){
+        } else if (random == 4) {
             resultado.innerHTML = `<img src="
         https://www.whitehousefarmcentre.co.uk/media/1309/rat.jpg?crop=0.017552408204181195,0.11576800903396661,0.37486423088185444,0.24446141472569158&cropmode=percentage&width=500&height=350&rnd=132061234560000000" width="400px"> <br> Você seria um ratinho aventureiro`
         }
